@@ -108,5 +108,15 @@ namespace Wasteland_Weirdos.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] WeirdoStats {
+            get {
+                object obj = ResourceManager.GetObject("WeirdoStats", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

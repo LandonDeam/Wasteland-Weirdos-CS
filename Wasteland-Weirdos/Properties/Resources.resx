@@ -130,6 +130,9 @@
   <data name="Karla_VariableFont_wght" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Karla-VariableFont_wght.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="WeirdoStats" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WeirdoStats.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="_100zs" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\100zs.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

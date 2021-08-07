@@ -29,17 +29,7 @@ namespace Wasteland_Weirdos
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnTest = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnTest
-            // 
-            this.btnTest.Location = new System.Drawing.Point(325, 321);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(100, 24);
-            this.btnTest.TabIndex = 0;
-            this.btnTest.Text = "Test";
-            this.btnTest.UseVisualStyleBackColor = true;
             // 
             // frmWastelandWeirdos
             // 
@@ -47,7 +37,6 @@ namespace Wasteland_Weirdos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(766, 668);
-            this.Controls.Add(this.btnTest);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmWastelandWeirdos";
             this.ResumeLayout(false);
@@ -55,7 +44,5 @@ namespace Wasteland_Weirdos
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnTest;
     }
 }

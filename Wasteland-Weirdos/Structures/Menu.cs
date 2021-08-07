@@ -8,15 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Wasteland_Weirdos.Forms
+namespace Wasteland_Weirdos.Structures
 {
-    public class CharacterCreator
+    public interface Menu
     {
-        public static void loadPage(Form frm)
-        {
-            form = frm;
-        }
-
-        private static Form form;
+        void loadPage(frmWastelandWeirdos frm);
     }
 }

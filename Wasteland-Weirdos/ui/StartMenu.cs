@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Wasteland_Weirdos.Forms
+namespace Wasteland_Weirdos.ui
 {
-    public class StartMenu
+    public class StartMenu : Structures.Menu
     {
-        public static void loadPage(Form frm)
+        private static frmWastelandWeirdos form;
+        private static PictureBox picHeadShot;
+        private static Button btnNewGame, btnSettings, btnLoadGame;
+        public void loadPage(frmWastelandWeirdos frm)
         {
             form = frm;
             picHeadShot = new System.Windows.Forms.PictureBox();
@@ -50,6 +53,7 @@ namespace Wasteland_Weirdos.Forms
             btnSettings.TabIndex = 2;
             btnSettings.Text = "Settings";
             btnSettings.UseVisualStyleBackColor = true;
+            btnSettings.Click += new System.EventHandler(funcTest);
             // 
             // btnLoadGame
             // 
@@ -79,16 +83,15 @@ namespace Wasteland_Weirdos.Forms
             form.ResumeLayout(false);
         }
 
-        private static void funcNewGame(object sender, EventArgs e)
+        private void funcNewGame(object sender, EventArgs e)
         {
             form.Controls.Clear();
-            CharacterCreator.loadPage(form);
+            form.loadForm(new ui.CharacterCreator());
         }
 
-        private static System.Windows.Forms.PictureBox picHeadShot;
-        private static System.Windows.Forms.Button btnNewGame;
-        private static System.Windows.Forms.Button btnSettings;
-        private static System.Windows.Forms.Button btnLoadGame;
-        private static Form form;
+        private void funcTest(object sender, EventArgs e)
+        {
+            MessageBox.Show("yep");
+        }
     }
 }
