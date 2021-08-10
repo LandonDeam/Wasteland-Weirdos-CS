@@ -108,7 +108,7 @@
     </Compile>
     <EmbeddedResource Include="Resources\Karla-Italic-VariableFont_wght.ttf" />
     <EmbeddedResource Include="Resources\Karla-VariableFont_wght.ttf" />
-    <None Include="Resources\WeirdoStats.json" />
+    <None Include="Resources\RaceStats.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

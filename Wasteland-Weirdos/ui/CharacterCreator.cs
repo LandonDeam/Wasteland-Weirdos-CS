@@ -15,8 +15,11 @@ namespace Wasteland_Weirdos.ui
     {
         public void loadPage()
         {
-            var stats = JsonConvert.DeserializeObject(Encoding.UTF8.GetString(Properties.Resources.WeirdoStats));
-            
+            Structures.Race[] races = JsonConvert.DeserializeObject<Structures.Race[]>(Encoding.UTF8.GetString(Properties.Resources.RaceStats));
+            foreach (Structures.Race race in races)
+            {
+                System.Diagnostics.Debug.WriteLine("\n" + race.Description);
+            }
         }
     }
 }

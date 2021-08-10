@@ -190,7 +190,9 @@ namespace Wasteland_Weirdos.Structures
     // Default class for all races
     class Race
     {
-        public string description { get; set; }
+        public string Name { get; set; }
+        public string SubRace { get; set; }
+        public string Description { get; set; }
         public int Strength { get; set; }
         public int Dexterity { get; set; }
         public int Constitution { get; set; }
@@ -207,7 +209,7 @@ namespace Wasteland_Weirdos.Structures
     // Default class for all bionic upgrades
     class Bionic
     {
-        public string description { get; set; }
+        public string Description { get; set; }
         public int Strength { get; set; }
         public int Dexterity { get; set; }
         public int Constitution { get; set; }
@@ -220,7 +222,7 @@ namespace Wasteland_Weirdos.Structures
     // Default class for all blood upgrades
     class Blood
     {
-        public string description { get; set; }
+        public string Description { get; set; }
         public int Strength { get; set; }
         public int Dexterity { get; set; }
         public int Constitution { get; set; }
