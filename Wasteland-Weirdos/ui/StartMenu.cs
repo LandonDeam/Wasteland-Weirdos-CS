@@ -12,18 +12,16 @@ namespace Wasteland_Weirdos.ui
 {
     public class StartMenu : Structures.Menu
     {
-        private static frmWastelandWeirdos form;
         private static PictureBox picHeadShot;
         private static Button btnNewGame, btnSettings, btnLoadGame;
-        public void loadPage(frmWastelandWeirdos frm)
+        public void loadPage()
         {
-            form = frm;
             picHeadShot = new System.Windows.Forms.PictureBox();
             btnNewGame = new System.Windows.Forms.Button();
             btnSettings = new System.Windows.Forms.Button();
             btnLoadGame = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(picHeadShot)).BeginInit();
-            form.SuspendLayout();
+            frmWastelandWeirdos.mainForm.SuspendLayout();
             // 
             // picHeadShot
             // 
@@ -67,26 +65,26 @@ namespace Wasteland_Weirdos.ui
             // 
             // frmWastelandWeirdos
             // 
-            form.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            form.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            form.BackgroundImage = global::Wasteland_Weirdos.Properties.Resources.background;
-            form.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            form.ClientSize = new System.Drawing.Size(766, 668);
-            form.Controls.Add(btnLoadGame);
-            form.Controls.Add(btnSettings);
-            form.Controls.Add(btnNewGame);
-            form.Controls.Add(picHeadShot);
-            form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            form.Name = "frmWastelandWeirdos";
-            form.Text = "frmStartMenu";
+            frmWastelandWeirdos.mainForm.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            frmWastelandWeirdos.mainForm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            frmWastelandWeirdos.mainForm.BackgroundImage = global::Wasteland_Weirdos.Properties.Resources.background;
+            frmWastelandWeirdos.mainForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            frmWastelandWeirdos.mainForm.ClientSize = new System.Drawing.Size(766, 668);
+            frmWastelandWeirdos.mainForm.Controls.Add(btnLoadGame);
+            frmWastelandWeirdos.mainForm.Controls.Add(btnSettings);
+            frmWastelandWeirdos.mainForm.Controls.Add(btnNewGame);
+            frmWastelandWeirdos.mainForm.Controls.Add(picHeadShot);
+            frmWastelandWeirdos.mainForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            frmWastelandWeirdos.mainForm.Name = "frmWastelandWeirdos";
+            frmWastelandWeirdos.mainForm.Text = "frmStartMenu";
             ((System.ComponentModel.ISupportInitialize)(picHeadShot)).EndInit();
-            form.ResumeLayout(false);
+            frmWastelandWeirdos.mainForm.ResumeLayout(false);
         }
 
         private void funcNewGame(object sender, EventArgs e)
         {
-            form.Controls.Clear();
-            form.loadForm(new ui.CharacterCreator());
+            frmWastelandWeirdos.mainForm.Controls.Clear();
+            frmWastelandWeirdos.mainForm.loadForm(new ui.CharacterCreator());
         }
 
         private void funcTest(object sender, EventArgs e)

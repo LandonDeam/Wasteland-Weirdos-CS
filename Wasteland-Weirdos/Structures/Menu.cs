@@ -12,6 +12,6 @@ namespace Wasteland_Weirdos.Structures
 {
     public interface Menu
     {
-        void loadPage(frmWastelandWeirdos frm);
+        void loadPage();
     }
 }

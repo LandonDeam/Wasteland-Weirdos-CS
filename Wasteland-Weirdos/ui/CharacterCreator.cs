@@ -13,7 +13,7 @@ namespace Wasteland_Weirdos.ui
 {
     public class CharacterCreator : Structures.Menu
     {
-        public void loadPage(frmWastelandWeirdos frm)
+        public void loadPage()
         {
             var stats = JsonConvert.DeserializeObject(Encoding.UTF8.GetString(Properties.Resources.WeirdoStats));
             

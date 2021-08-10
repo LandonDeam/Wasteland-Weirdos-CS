@@ -13,17 +13,19 @@ namespace Wasteland_Weirdos
     public partial class frmWastelandWeirdos : Form
     {
         public Structures.Menu currentForm;
+        public static frmWastelandWeirdos mainForm;
         public frmWastelandWeirdos()
         {
             InitializeComponent();
             this.Controls.Clear();
+            mainForm = this;
             loadForm(new ui.StartMenu());
-        }
+        } 
 
         public void loadForm(Structures.Menu newForm)
         {
             currentForm = newForm;
-            currentForm.loadPage(this);
+            currentForm.loadPage();
             // I may want to implement garbage collection here in the future to auto-destroy
             // unneeded objects left over from previous forms (GC.Collect is the method for it)
         }

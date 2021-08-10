@@ -8,6 +8,7 @@ namespace Wasteland_Weirdos
 {
     static class Program
     {
+        public static Random rand;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
