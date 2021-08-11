@@ -18,6 +18,7 @@ namespace Wasteland_Weirdos
         {
             InitializeComponent();
             this.Controls.Clear();
+            Structures.Weirdo.Initialize();
             mainForm = this;
             loadForm(new ui.StartMenu());
         } 
@@ -28,6 +29,11 @@ namespace Wasteland_Weirdos
             currentForm.loadPage();
             // I may want to implement garbage collection here in the future to auto-destroy
             // unneeded objects left over from previous forms (GC.Collect is the method for it)
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Wasteland_Weirdos
 {
     static class Program
     {
-        public static Random rand;
+        public static Random rand = new Random();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,7 +17,7 @@ namespace Wasteland_Weirdos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmWastelandWeirdos());
+            Application.Run(mainForm: new frmWastelandWeirdos());
         }
     }
 }

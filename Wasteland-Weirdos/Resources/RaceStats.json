@@ -2,7 +2,7 @@
   
   {
     "Name": "Human",
-    "SubRace": "None",
+    "SuperRace": "None",
     "Description": "Humans are just ordinary humans for the most part, though many from Terna will bear cybernetic enhancements.",
     "Strength": 0,
     "Dexterity": 0,
@@ -19,7 +19,7 @@
 
   {
     "Name": "Red Elf",
-    "SubRace": "Elf",
+    "SuperRace": "Elf",
     "Description": "",
     "Strength": 0,
     "Dexterity": 0,
@@ -36,7 +36,7 @@
 
   {
     "Name": "Green Elf",
-    "SubRace": "Elf",
+    "SuperRace": "Elf",
     "Description": "",
     "Strength": 0,
     "Dexterity": 0,
@@ -53,7 +53,7 @@
 
   {
     "Name": "White Elf",
-    "SubRace": "Elf",
+    "SuperRace": "Elf",
     "Description": "",
     "Strength": 0,
     "Dexterity": 0,
@@ -70,7 +70,7 @@
 
   {
     "Name": "Gray Elf",
-    "SubRace": "Elf",
+    "SuperRace": "Elf",
     "Description": "",
     "Strength": 0,
     "Dexterity": 0,
@@ -87,7 +87,7 @@
 
   {
     "Name": "Black-Eyed Orc",
-    "SubRace": "Orc",
+    "SuperRace": "Orc",
     "Description": "",
     "Strength": 0,
     "Dexterity": 0,
@@ -104,7 +104,7 @@
 
   {
     "Name": "Yellow-Eyed Orc",
-    "SubRace": "Orc",
+    "SuperRace": "Orc",
     "Description": "",
     "Strength": 0,
     "Dexterity": 0,
@@ -121,7 +121,7 @@
 
   {
     "Name": "Dwarf",
-    "SubRace": "None",
+    "SuperRace": "None",
     "Description": "",
     "Strength": 0,
     "Dexterity": 0,
@@ -138,7 +138,7 @@
 
   {
     "Name": "Gnome",
-    "SubRace": "None",
+    "SuperRace": "None",
     "Description": "",
     "Strength": 0,
     "Dexterity": 0,
@@ -155,7 +155,7 @@
 
   {
     "Name": "Green Shialonian",
-    "SubRace": "Shialonian",
+    "SuperRace": "Shialonian",
     "Description": "Shialonians are tiny pinky sized people divided into two sub races that despise one another. These are the Green Shialonians, and the Red Shialonians. Both have white hair, pointed ears, and Fey like eyes that are red or green in hue. Green Shialonians have green skin and red eyes. They hate each other for existing and looking different than one another, and wage war because of that fact. The reason being that in their religion, only one of them is the true creation of Shialon, their god. Each side depicts Shialon with their races color, which equally enrages both sides. They mainly reside in the Blood Desert, but their burrows can be found anywhere in the wastes.",
     "Strength": -3,
     "Dexterity": 1,
@@ -172,7 +172,7 @@
 
   {
     "Name": "Red Shialonian",
-    "SubRace": "Shialonian",
+    "SuperRace": "Shialonian",
     "Description": "Shialonians are tiny pinky sized people divided into two sub races that despise one another. These are the Green Shialonians, and the Red Shialonians. Both have white hair, pointed ears, and Fey like eyes that are red or green in hue. Red Shialonians have green skin and green eyes. They hate each other for existing and looking different than one another, and wage war because of that fact. The reason being that in their religion, only one of them is the true creation of Shialon, their god. Each side depicts Shialon with their races color, which equally enrages both sides. They mainly reside in the Blood Desert, but their burrows can be found anywhere in the wastes.",
     "Strength": -3,
     "Dexterity": 1,
@@ -189,7 +189,7 @@
 
   {
     "Name": "Halfling",
-    "SubRace": "None",
+    "SuperRace": "None",
     "Description": "",
     "Strength": 0,
     "Dexterity": 0,

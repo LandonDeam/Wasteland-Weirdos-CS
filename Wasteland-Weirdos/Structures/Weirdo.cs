@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Wasteland_Weirdos.Structures
 {
@@ -11,9 +12,9 @@ namespace Wasteland_Weirdos.Structures
     {
         // Variables to share across all class members
         
-        private static List<Race> Races;
-        private static List<Bionic> bionicUpgrades;
-        private static List<Blood> bloodUpgrades;
+        public static List<Race> Races;
+        public static List<Bionic> bionicUpgrades;
+        public static List<Blood> bloodUpgrades;
 
         // Individual Weirdo build options
         private Race Body;
@@ -84,6 +85,11 @@ namespace Wasteland_Weirdos.Structures
             this.HairColor = this.Body.HairColors[Program.rand.Next(0, this.Body.HairColors.Length) - 1];
             this.EyeColor = this.Body.EyeColors[Program.rand.Next(0, this.Body.EyeColors.Length) - 1];
             this.SkinColor = this.Body.SkinColors[Program.rand.Next(0, this.Body.SkinColors.Length) - 1];
+        }
+
+        public static void Initialize()
+        {
+            Weirdo.Races = JsonConvert.DeserializeObject<List<Race>>(Encoding.UTF8.GetString(Properties.Resources.RaceStats));
         }
 
         public void levelUp()
@@ -191,7 +197,7 @@ namespace Wasteland_Weirdos.Structures
     class Race
     {
         public string Name { get; set; }
-        public string SubRace { get; set; }
+        public string SuperRace { get; set; }
         public string Description { get; set; }
         public int Strength { get; set; }
         public int Dexterity { get; set; }
