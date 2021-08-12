@@ -17,11 +17,7 @@ namespace Wasteland_Weirdos
         public frmWastelandWeirdos()
         {
             InitializeComponent();
-            this.Controls.Clear();
-            Structures.Weirdo.Initialize();
-            mainForm = this;
-            loadForm(new ui.StartMenu());
-        } 
+        }
 
         public void loadForm(Structures.Menu newForm)
         {
@@ -31,7 +27,15 @@ namespace Wasteland_Weirdos
             // unneeded objects left over from previous forms (GC.Collect is the method for it)
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void frmWastelandWeirdos_Load(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            Structures.Weirdo.Initialize();
+            mainForm = this;
+            loadForm(new ui.StartMenu());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

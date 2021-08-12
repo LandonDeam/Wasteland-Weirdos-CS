@@ -83,6 +83,7 @@ namespace Wasteland_Weirdos.ui
 
         private void funcNewGame(object sender, EventArgs e)
         {
+            frmWastelandWeirdos.mainForm.SuspendLayout();
             frmWastelandWeirdos.mainForm.Controls.Clear();
             frmWastelandWeirdos.mainForm.loadForm(new ui.CharacterCreator());
         }

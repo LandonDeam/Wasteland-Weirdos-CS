@@ -17,26 +17,27 @@ namespace Wasteland_Weirdos.Structures
         public static List<Blood> bloodUpgrades;
 
         // Individual Weirdo build options
-        private Race Body;
-        private Race Brain;
-        private List<Bionic> ownedBionicUpgrades;
-        private List<Blood> ownedBloodUpgrades;
+        public Race Body;
+        public Race Brain;
+        public List<Bionic> ownedBionicUpgrades;
+        public List<Blood> ownedBloodUpgrades;
 
         // Individual Stats
-        private int Strength = 5;
-        private int Dexterity = 5;
-        private int Constitution = 5;
-        private int Willpower = 5;
-        private int Intellect = 5;
-        private int Charisma = 5;
-        private int Level = 1;
+        public int Strength = 5;
+        public int Dexterity = 5;
+        public int Constitution = 5;
+        public int Willpower = 5;
+        public int Intellect = 5;
+        public int Charisma = 5;
+        public int Level = 1;
 
         // Cosmetics
-        private double Height;
-        private double Weight;
-        private string HairColor;
-        private string EyeColor;
-        private string SkinColor;
+        public string Name;
+        public double Height;
+        public double Weight;
+        public string HairColor;
+        public string EyeColor;
+        public string SkinColor;
 
 
 
