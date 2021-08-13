@@ -164,7 +164,7 @@
     "Intellect": 1,
     "Charisma": -2,
     "Height": [ 4, 5 ],
-    "Weight": [ 0.03, 0.075 ],
+    "Weight": [ 0.025, 0.075 ],
     "HairColors": [ "White" ],
     "EyeColors": [ "Red" ],
     "SkinColors": [ "Green" ]
@@ -181,7 +181,7 @@
     "Intellect": 1,
     "Charisma": -2,
     "Height": [ 4, 5 ],
-    "Weight": [ 0.03, 0.075 ],
+    "Weight": [ 0.025, 0.075 ],
     "HairColors": [ "White" ],
     "EyeColors": [ "Green" ],
     "SkinColors": [ "Red" ]
