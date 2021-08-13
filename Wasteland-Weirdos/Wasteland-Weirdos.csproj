@@ -70,6 +70,9 @@
     <Compile Include="frmWastelandWeirdos.Designer.cs">
       <DependentUpon>frmWastelandWeirdos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Structures\Bionic.cs" />
+    <Compile Include="Structures\Blood.cs" />
+    <Compile Include="Structures\Race.cs" />
     <Compile Include="Structures\Weirdo.cs" />
     <Compile Include="ui\CharacterCreator.cs" />
     <Compile Include="Structures\Menu.cs" />

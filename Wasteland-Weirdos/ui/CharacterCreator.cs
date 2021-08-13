@@ -32,7 +32,6 @@ namespace Wasteland_Weirdos.ui
             // TreeView setup
             tvwRaceSelectors = new TreeView();
             tvwRaceSelectors.Nodes.AddRange(generateRaceTreeNodes());
-            tvwRaceSelectors.NodeMouseHover += new TreeNodeMouseHoverEventHandler(treeViewNodeHover);
             tvwRaceSelectors.Location = new System.Drawing.Point(35, 35);
             tvwRaceSelectors.Name = "tvwBrainSelector";
             tvwRaceSelectors.Size = new System.Drawing.Size(200, 500);
@@ -40,6 +39,7 @@ namespace Wasteland_Weirdos.ui
             tvwRaceSelectors.BorderStyle = System.Windows.Forms.BorderStyle.None;
             tvwRaceSelectors.ExpandAll();
             tvwRaceSelectors.LineColor = System.Drawing.Color.White;
+            tvwRaceSelectors.ShowNodeToolTips = true;
             tvwRaceSelectors.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.selectBodyRace);
 
             // Back button setup
@@ -341,18 +341,5 @@ namespace Wasteland_Weirdos.ui
             }
             return str;
         }
-
-        private async void treeViewNodeHover(object sender, TreeNodeMouseHoverEventArgs e)
-        {
-            if(e.Node.Tag.Equals("SuperRace") || e.Node.ToolTipText.Trim().Equals("")) { return; }
-            lblToolTipText.Visible = true;
-            lblToolTipText.Enabled = true;
-            await Task.Delay(500);
-            lblToolTipText.Text = e.Node.ToolTipText;
-            Point p = frmWastelandWeirdos.mainForm.PointToClient(Cursor.Position);
-            lblToolTipText.Location = new System.Drawing.Point(p.X, p.Y - lblToolTipText.Size.Height);
-            lblToolTipText.Visible = true;
-            lblToolTipText.Enabled = true;
-        } // TODO disable and make tool tip box invisible after moving mouse away
     }
 }
