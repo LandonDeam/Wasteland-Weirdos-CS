@@ -29,14 +29,14 @@ namespace Wasteland_Weirdos
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Node0");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Node4");
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Node5");
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Node3", new System.Windows.Forms.TreeNode[] {
-            treeNode34,
-            treeNode35});
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Node0");
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Node4");
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Node5");
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Node3", new System.Windows.Forms.TreeNode[] {
+            treeNode40,
+            treeNode41});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWastelandWeirdos));
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.button1 = new System.Windows.Forms.Button();
@@ -51,6 +51,7 @@ namespace Wasteland_Weirdos
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // treeView1
@@ -58,23 +59,23 @@ namespace Wasteland_Weirdos
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView1.Location = new System.Drawing.Point(35, 35);
             this.treeView1.Name = "treeView1";
-            treeNode31.Name = "Node0";
-            treeNode31.Text = "Node0";
-            treeNode32.Name = "Node1";
-            treeNode32.Text = "Node1";
-            treeNode33.Name = "Node2";
-            treeNode33.Text = "Node2";
-            treeNode34.Name = "Node4";
-            treeNode34.Text = "Node4";
-            treeNode35.Name = "Node5";
-            treeNode35.Text = "Node5";
-            treeNode36.Name = "Node3";
-            treeNode36.Text = "Node3";
+            treeNode37.Name = "Node0";
+            treeNode37.Text = "Node0";
+            treeNode38.Name = "Node1";
+            treeNode38.Text = "Node1";
+            treeNode39.Name = "Node2";
+            treeNode39.Text = "Node2";
+            treeNode40.Name = "Node4";
+            treeNode40.Text = "Node4";
+            treeNode41.Name = "Node5";
+            treeNode41.Text = "Node5";
+            treeNode42.Name = "Node3";
+            treeNode42.Text = "Node3";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode31,
-            treeNode32,
-            treeNode33,
-            treeNode36});
+            treeNode37,
+            treeNode38,
+            treeNode39,
+            treeNode42});
             this.treeView1.Size = new System.Drawing.Size(200, 500);
             this.treeView1.TabIndex = 0;
             // 
@@ -190,12 +191,21 @@ namespace Wasteland_Weirdos
             this.label10.TabIndex = 12;
             this.label10.Text = "Weight    0.4 - 1.2 oz";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(294, 267);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(0, 13);
+            this.label11.TabIndex = 13;
+            // 
             // frmWastelandWeirdos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(750, 629);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
@@ -233,5 +243,6 @@ namespace Wasteland_Weirdos
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }

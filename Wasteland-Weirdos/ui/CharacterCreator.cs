@@ -20,6 +20,7 @@ namespace Wasteland_Weirdos.ui
         private Label lblRace, lblDescription;
         private Label lblStrength, lblDexterity, lblConstitution, lblWillpower, lblIntellect, lblCharisma;
         private Label lblHeight, lblWeight;
+        private Label lblToolTipText;
         private Structures.Race bodyRace = null, brainRace = null;
         private string weirdoName;
 
@@ -31,10 +32,11 @@ namespace Wasteland_Weirdos.ui
             // TreeView setup
             tvwRaceSelectors = new TreeView();
             tvwRaceSelectors.Nodes.AddRange(generateRaceTreeNodes());
+            tvwRaceSelectors.NodeMouseHover += new TreeNodeMouseHoverEventHandler(treeViewNodeHover);
             tvwRaceSelectors.Location = new System.Drawing.Point(35, 35);
             tvwRaceSelectors.Name = "tvwBrainSelector";
             tvwRaceSelectors.Size = new System.Drawing.Size(200, 500);
-            tvwRaceSelectors.TabIndex = 0;
+            tvwRaceSelectors.TabIndex = 13;
             tvwRaceSelectors.BorderStyle = System.Windows.Forms.BorderStyle.None;
             tvwRaceSelectors.ExpandAll();
             tvwRaceSelectors.LineColor = System.Drawing.Color.White;
@@ -70,7 +72,7 @@ namespace Wasteland_Weirdos.ui
             lblRace.Name = "lblRace";
             lblRace.Size = new System.Drawing.Size(117, 20);
             lblRace.TabIndex = 3;
-            lblRace.Text = string.Empty;
+            lblRace.Text = "Select Body Race";
 
             // selected race description setup
             lblDescription = new Label();
@@ -80,7 +82,7 @@ namespace Wasteland_Weirdos.ui
             lblDescription.Name = "lblDescription";
             lblDescription.Size = new System.Drawing.Size(440, 231);
             lblDescription.TabIndex = 4;
-            lblDescription.Text = string.Empty;
+            lblDescription.Text = "You must select a race for your body, and a different race for your brain. Hover over each race to view their stat changes.";
 
             // Strength stat label setup
             lblStrength = new Label();
@@ -163,11 +165,24 @@ namespace Wasteland_Weirdos.ui
             lblWeight.TabIndex = 12;
             lblWeight.Text = "Weight    ";
 
+            // Tool tip text label setup
+            lblToolTipText = new Label();
+            lblToolTipText.AutoSize = true;
+            lblToolTipText.BackColor = System.Drawing.Color.White;
+            lblToolTipText.Location = new System.Drawing.Point(0, 0);
+            lblToolTipText.Name = "lblToolTipText";
+            lblToolTipText.Size = new System.Drawing.Size(0, 13);
+            lblToolTipText.TabIndex = 0;
+            lblToolTipText.Visible = false;
+            lblToolTipText.Enabled = false;
+
+
             // Settimg up the form layout
             frmWastelandWeirdos.mainForm.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             frmWastelandWeirdos.mainForm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             frmWastelandWeirdos.mainForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             frmWastelandWeirdos.mainForm.ClientSize = new System.Drawing.Size(766, 668);
+            frmWastelandWeirdos.mainForm.Controls.Add(lblToolTipText);
             frmWastelandWeirdos.mainForm.Controls.Add(tvwRaceSelectors);
             frmWastelandWeirdos.mainForm.Controls.Add(btnBack);
             frmWastelandWeirdos.mainForm.Controls.Add(btnNext);
@@ -200,6 +215,9 @@ namespace Wasteland_Weirdos.ui
             //btnNext.Click -= toSelectBrain;
             //btnNext.Click += foobar;
             btnNext.Enabled = false;
+
+            lblRace.Text = "Select Brain Race";
+            lblDescription.Text = string.Empty;
 
             tvwRaceSelectors.AfterSelect -= selectBodyRace;
             tvwRaceSelectors.AfterSelect += selectBrainRace;
@@ -242,7 +260,7 @@ namespace Wasteland_Weirdos.ui
             lblHeight.Text = $"Height    {bodyRace.getHeightSpread()}";
             lblWeight.Text = $"Weight    {bodyRace.getWeightSpread()}";
         }
-
+        
         private void selectBrainRace(object sender, EventArgs e)
         {
             if (this.tvwRaceSelectors.SelectedNode.Tag.Equals("SuperRace")) { return; }
@@ -257,12 +275,13 @@ namespace Wasteland_Weirdos.ui
 
         private TreeNode[] generateRaceTreeNodes()
         {
-            List<TreeNode> races = ToTreeNodeArray(this.GetRaceArray("None")).ToList();
-            this.AddSubRacesToTreeNodeList(races);
+            bool isBody = this.bodyRace == null;
+            List<TreeNode> races = ToTreeNodeArray(this.GetRaceArray("None"), isBody).ToList();
+            this.AddSubRacesToTreeNodeList(races, isBody);
             return races.ToArray();
         }
 
-        private void AddSubRacesToTreeNodeList(List<TreeNode> races)
+        private void AddSubRacesToTreeNodeList(List<TreeNode> races, bool isBody)
         {
             List<string> superRaces = new List<string>();
             foreach (Structures.Race race in Structures.Weirdo.Races)
@@ -272,7 +291,7 @@ namespace Wasteland_Weirdos.ui
             }
             foreach (string superRace in superRaces)
             {
-                TreeNode super = new TreeNode(superRace, ToTreeNodeArray(this.GetRaceArray(superRace)));
+                TreeNode super = new TreeNode(superRace, ToTreeNodeArray(this.GetRaceArray(superRace), isBody));
                 super.Name = superRace;
                 super.Text = superRace;
                 super.Tag = "SuperRace";
@@ -285,23 +304,55 @@ namespace Wasteland_Weirdos.ui
             return Structures.Weirdo.Races.Where(_ => _.SuperRace.Equals(filter) && (this.bodyRace == null || !this.bodyRace.Equals(_))).ToArray();
         }
 
-        private static TreeNode[] ToTreeNodeArray(Structures.Race[] races)
+        private static TreeNode[] ToTreeNodeArray(Structures.Race[] races, bool isBody)
         {
             TreeNode[] nodes = new TreeNode[races.Length];
             for(int i = 0; i < nodes.Length; i++)
             {
-                nodes[i] = ToTreeNode(races[i]);
+                nodes[i] = ToTreeNode(races[i], isBody);
             }
             return nodes;
         }
 
-        private static TreeNode ToTreeNode(Structures.Race race)
+        private static TreeNode ToTreeNode(Structures.Race race, bool isBody)
         {
             TreeNode node = new TreeNode(race.Name);
             node.Name = race.Name;
             node.Text = race.Name;
             node.Tag = race;
+            node.ToolTipText = getToolTipText(race, isBody);
             return node;
         }
+
+        private static string getToolTipText(Structures.Race race, bool isBody)
+        {
+            string str = "";
+            if (isBody)
+            {
+                str += "Str " + ((race.Strength > 0) ? "+" : "") + race.Strength.ToString() + "; ";
+                str += "Dex " + ((race.Dexterity > 0) ? "+" : "") + race.Dexterity.ToString() + "; ";
+                str += "Con " + ((race.Constitution > 0) ? "+" : "") + race.Constitution.ToString() + "; ";
+            }
+            else
+            {
+                str += "Wil " + ((race.Willpower >= 0) ? "+" : "") + race.Willpower.ToString() + "; ";
+                str += "Int " + ((race.Intellect >= 0) ? "+" : "") + race.Intellect.ToString() + "; ";
+                str += "Chr " + ((race.Charisma >= 0) ? "+" : "") + race.Charisma.ToString() + "; ";
+            }
+            return str;
+        }
+
+        private async void treeViewNodeHover(object sender, TreeNodeMouseHoverEventArgs e)
+        {
+            if(e.Node.Tag.Equals("SuperRace") || e.Node.ToolTipText.Trim().Equals("")) { return; }
+            lblToolTipText.Visible = true;
+            lblToolTipText.Enabled = true;
+            await Task.Delay(500);
+            lblToolTipText.Text = e.Node.ToolTipText;
+            Point p = frmWastelandWeirdos.mainForm.PointToClient(Cursor.Position);
+            lblToolTipText.Location = new System.Drawing.Point(p.X, p.Y - lblToolTipText.Size.Height);
+            lblToolTipText.Visible = true;
+            lblToolTipText.Enabled = true;
+        } // TODO disable and make tool tip box invisible after moving mouse away
     }
 }
