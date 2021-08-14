@@ -75,7 +75,7 @@ namespace Wasteland_Weirdos.ui
             frmWastelandWeirdos.mainForm.Controls.Add(btnNewGame);
             frmWastelandWeirdos.mainForm.Controls.Add(picHeadShot);
             frmWastelandWeirdos.mainForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            frmWastelandWeirdos.mainForm.Name = "frmWastelandWeirdos";
+            frmWastelandWeirdos.mainForm.Name = "Wasteland Weirdos";
             frmWastelandWeirdos.mainForm.Text = "frmStartMenu";
             ((System.ComponentModel.ISupportInitialize)(picHeadShot)).EndInit();
             frmWastelandWeirdos.mainForm.ResumeLayout(false);

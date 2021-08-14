@@ -22,7 +22,6 @@ namespace Wasteland_Weirdos.ui
         private Label lblHeight, lblWeight;
         private Label lblToolTipText;
         private Structures.Race bodyRace = null, brainRace = null;
-        private string weirdoName;
 
         public void loadPage()
         {
@@ -284,7 +283,7 @@ namespace Wasteland_Weirdos.ui
         private void AddSubRacesToTreeNodeList(List<TreeNode> races, bool isBody)
         {
             List<string> superRaces = new List<string>();
-            foreach (Structures.Race race in Structures.Weirdo.Races)
+            foreach (Structures.Race race in Structures.Race.Races)
             {
                 if (race.SuperRace.Equals("None") || superRaces.Contains(race.SuperRace)) { continue; }
                 superRaces.Add(race.SuperRace);
@@ -301,7 +300,7 @@ namespace Wasteland_Weirdos.ui
 
         private Structures.Race[] GetRaceArray(string filter)
         {
-            return Structures.Weirdo.Races.Where(_ => _.SuperRace.Equals(filter) && (this.bodyRace == null || !this.bodyRace.Equals(_))).ToArray();
+            return Structures.Race.Races.Where(_ => _.SuperRace.Equals(filter) && (this.bodyRace == null || !this.bodyRace.Equals(_))).ToArray();
         }
 
         private static TreeNode[] ToTreeNodeArray(Structures.Race[] races, bool isBody)

@@ -8,6 +8,8 @@ namespace Wasteland_Weirdos.Structures
 {
     class Blood
     {
+        public static List<Blood> bloodUpgrades;
+        public string Name { get; set; }
         public string Description { get; set; }
         public int Strength { get; set; }
         public int Dexterity { get; set; }

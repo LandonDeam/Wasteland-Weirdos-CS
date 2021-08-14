@@ -12,7 +12,7 @@ namespace Wasteland_Weirdos
 {
     public partial class frmWastelandWeirdos : Form
     {
-        public Structures.Menu currentForm;
+        public static Structures.Menu currentForm;
         public static frmWastelandWeirdos mainForm;
         public frmWastelandWeirdos()
         {

@@ -8,6 +8,7 @@ namespace Wasteland_Weirdos.Structures
 {
     class Race
     {
+        public static List<Race> Races { get; set; }
         public string Name { get; set; }
         public string SuperRace { get; set; }
         public string Description { get; set; }
