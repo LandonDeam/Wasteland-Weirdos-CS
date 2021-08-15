@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Wasteland_Weirdos.ui
+namespace Wasteland_Weirdos
 {
-    public class StartMenu : Structures.Menu
+    public class StartMenu : Menu
     {
         private static PictureBox picHeadShot;
         private static Button btnNewGame, btnSettings, btnLoadGame;
@@ -85,7 +85,7 @@ namespace Wasteland_Weirdos.ui
         {
             frmWastelandWeirdos.mainForm.SuspendLayout();
             frmWastelandWeirdos.mainForm.Controls.Clear();
-            frmWastelandWeirdos.mainForm.loadForm(new ui.CharacterCreator());
+            frmWastelandWeirdos.mainForm.loadForm(new CharacterCreator());
         }
 
         private void funcTest(object sender, EventArgs e)

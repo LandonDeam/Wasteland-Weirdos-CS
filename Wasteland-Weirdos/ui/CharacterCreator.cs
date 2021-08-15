@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 
-namespace Wasteland_Weirdos.ui
+namespace Wasteland_Weirdos
 {
-    public class CharacterCreator : Structures.Menu
+    public class CharacterCreator : Menu
     {
         private TreeView tvwRaceSelectors;
         private Button btnBack;
@@ -21,7 +21,7 @@ namespace Wasteland_Weirdos.ui
         private Label lblStrength, lblDexterity, lblConstitution, lblWillpower, lblIntellect, lblCharisma;
         private Label lblHeight, lblWeight;
         private Label lblToolTipText;
-        private Structures.Race bodyRace = null, brainRace = null;
+        private Race bodyRace = null, brainRace = null;
 
         public void loadPage()
         {
@@ -249,7 +249,7 @@ namespace Wasteland_Weirdos.ui
         {
             if (this.tvwRaceSelectors.SelectedNode.Tag.Equals("SuperRace")) { return; }
             btnNext.Enabled = true;
-            bodyRace = (Structures.Race)tvwRaceSelectors.SelectedNode.Tag;
+            bodyRace = (Race)tvwRaceSelectors.SelectedNode.Tag;
 
             lblRace.Text = bodyRace.Name;
             lblDescription.Text = bodyRace.Description;
@@ -263,7 +263,7 @@ namespace Wasteland_Weirdos.ui
         private void selectBrainRace(object sender, EventArgs e)
         {
             if (this.tvwRaceSelectors.SelectedNode.Tag.Equals("SuperRace")) { return; }
-            brainRace = (Structures.Race)tvwRaceSelectors.SelectedNode.Tag;
+            brainRace = (Race)tvwRaceSelectors.SelectedNode.Tag;
 
             lblRace.Text = brainRace.Name;
             lblDescription.Text = brainRace.Description;
@@ -283,7 +283,7 @@ namespace Wasteland_Weirdos.ui
         private void AddSubRacesToTreeNodeList(List<TreeNode> races, bool isBody)
         {
             List<string> superRaces = new List<string>();
-            foreach (Structures.Race race in Structures.Race.Races)
+            foreach (Race race in Race.Races)
             {
                 if (race.SuperRace.Equals("None") || superRaces.Contains(race.SuperRace)) { continue; }
                 superRaces.Add(race.SuperRace);
@@ -298,12 +298,12 @@ namespace Wasteland_Weirdos.ui
             }
         }
 
-        private Structures.Race[] GetRaceArray(string filter)
+        private Race[] GetRaceArray(string filter)
         {
-            return Structures.Race.Races.Where(_ => _.SuperRace.Equals(filter) && (this.bodyRace == null || !this.bodyRace.Equals(_))).ToArray();
+            return Race.Races.Where(_ => _.SuperRace.Equals(filter) && (this.bodyRace == null || !this.bodyRace.Equals(_))).ToArray();
         }
 
-        private static TreeNode[] ToTreeNodeArray(Structures.Race[] races, bool isBody)
+        private static TreeNode[] ToTreeNodeArray(Race[] races, bool isBody)
         {
             TreeNode[] nodes = new TreeNode[races.Length];
             for(int i = 0; i < nodes.Length; i++)
@@ -313,7 +313,7 @@ namespace Wasteland_Weirdos.ui
             return nodes;
         }
 
-        private static TreeNode ToTreeNode(Structures.Race race, bool isBody)
+        private static TreeNode ToTreeNode(Race race, bool isBody)
         {
             TreeNode node = new TreeNode(race.Name);
             node.Name = race.Name;
@@ -323,7 +323,7 @@ namespace Wasteland_Weirdos.ui
             return node;
         }
 
-        private static string getToolTipText(Structures.Race race, bool isBody)
+        private static string getToolTipText(Race race, bool isBody)
         {
             string str = "";
             if (isBody)

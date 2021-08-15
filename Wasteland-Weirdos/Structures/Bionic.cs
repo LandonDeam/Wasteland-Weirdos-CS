@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Wasteland_Weirdos.Structures
+namespace Wasteland_Weirdos
 {
     class Bionic
     {

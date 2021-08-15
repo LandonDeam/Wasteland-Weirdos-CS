@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Wasteland_Weirdos.Structures
+namespace Wasteland_Weirdos
 {
     public interface Menu
     {

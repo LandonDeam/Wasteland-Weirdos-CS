@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace Wasteland_Weirdos.Structures
+namespace Wasteland_Weirdos
 {
     // Default class for all weirdos
     class Weirdo

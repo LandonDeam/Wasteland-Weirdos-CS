@@ -12,14 +12,14 @@ namespace Wasteland_Weirdos
 {
     public partial class frmWastelandWeirdos : Form
     {
-        public static Structures.Menu currentForm;
+        public static Menu currentForm;
         public static frmWastelandWeirdos mainForm;
         public frmWastelandWeirdos()
         {
             InitializeComponent();
         }
 
-        public void loadForm(Structures.Menu newForm)
+        public void loadForm(Menu newForm)
         {
             currentForm = newForm;
             currentForm.loadPage();
@@ -30,9 +30,9 @@ namespace Wasteland_Weirdos
         private void frmWastelandWeirdos_Load(object sender, EventArgs e)
         {
             this.Controls.Clear();
-            Structures.Weirdo.Initialize();
+            Weirdo.Initialize();
             mainForm = this;
-            loadForm(new ui.StartMenu());
+            loadForm(new StartMenu());
         }
 
         private void button1_Click(object sender, EventArgs e)
